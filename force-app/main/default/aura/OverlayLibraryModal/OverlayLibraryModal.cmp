@@ -1,0 +1,14 @@
+<aura:component access="global">
+    <!--Declare Attribute-->
+    <aura:attribute name="FirstName" type="String"/> 
+    <aura:attribute name="LastName" type="String"/> 
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+     
+    <!--Component Start--> 
+    <div class="slds-m-around--xx-large">
+        <p>{!v.FirstName} &nbsp; {!v.LastName} </p>
+        <br/>
+        <lightning:button variant="brand" label="Cancel" onclick="{!c.handleCloseModal}"/>
+    </div>
+    <!--Component End-->
+</aura:component>

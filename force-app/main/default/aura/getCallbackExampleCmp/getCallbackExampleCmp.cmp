@@ -1,0 +1,12 @@
+<aura:component access="GLOBAL" >
+<!--	<aura:dependency resource="c:getCallbackExampleEvt" type="EVENT" />
+    <aura:dependency resource="markup://force:*" type="EVENT"/>
+    -->
+    <aura:registerEvent type="c:getCallbackExampleEvt" name="getCallbackExampleEvt" />
+    <aura:attribute name="text" type="String" default="Sample" />
+
+    <aura:handler name="init" action="{!c.init}" value="{!this}" /> 
+    <aura:handler event="c:getCallbackExampleEvt" action="{!c.updateView}" />
+    
+    {!v.text}
+</aura:component>

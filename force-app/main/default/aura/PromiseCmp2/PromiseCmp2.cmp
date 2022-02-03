@@ -1,0 +1,10 @@
+<aura:component controller="PromiseController2">
+    <aura:attribute name="tempVal" type="String" default="Default" />
+    {!v. tempVal}
+    <br/>
+	<ui:button label="getCallback" press="{!c.getcallbk}" />
+    <br/>
+    <ui:button label="getModify" press="{!c.getModifyBk}" />
+    <br/>
+    <ui:button label="getCallBackImp" press="{!c.getcallbkImp}" />
+</aura:component>

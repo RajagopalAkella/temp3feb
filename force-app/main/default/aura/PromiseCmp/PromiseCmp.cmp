@@ -1,0 +1,24 @@
+<aura:component controller="PromiseController">
+    
+    <aura:attribute name="status" type="String"  default="Not started" />
+    <aura:attribute name="statusArray" type="String[]"  />
+    <aura:attribute type="Integer" name="count" default="1"/>
+    
+    <ui:button label="Simple Promise Based Execution " press="{!c.promiseExecution}" />
+    <ui:button label="PromiseChaining " press="{!c.promiseChaining}" />
+    <ui:button label="Orchestrating promises " press="{!c.promiseOrchestration}" />
+    <ui:button label="Promise.race() " press="{!c.promiseRace}" />
+    <ui:button label="Error Handling  " press="{!c.promiseError}" />
+    <ui:button label="GetAcc  " press="{!c.getAccount}" />
+    <ui:button label="getCallback" press="{!c.getcallbk}" />
+    <div>
+        {!v.status}
+    </div>
+    Orchestrating promises Response -
+    <div>
+        {!v.statusArray}
+    </div>
+    <div class="slds-box slds-theme_default">
+        {!v.count}
+    </div>
+</aura:component>

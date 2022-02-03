@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="posts" type="String[]" default="['0','1']" />
+    <aura:attribute name="postsstr" type="String" />
+    {!v. postsstr}
+</aura:component>

@@ -1,0 +1,15 @@
+<!--c:dynamicHandler-->
+<aura:component >
+    <aura:registerEvent name="compEvent" type="c:sampleCmpEvent"/>
+    <aura:registerEvent name="appEvent" type="c:sampleAppEvent"/>
+    <h1>Add dynamic handler for event</h1>
+    <p>
+        <lightning:button label="Fire component event" onclick="{!c.fireEvent}" />
+        <lightning:button label="Add dynamic event handler for component event" onclick="{!c.addEventHandler}" />
+    </p>
+    <p>
+        <lightning:button label="Fire application event" onclick="{!c.fireAppEvent}" />
+        <lightning:button label="Add dynamic event handler for application event" onclick="{!c.addAppEventHandler}" />
+    </p>
+
+</aura:component>

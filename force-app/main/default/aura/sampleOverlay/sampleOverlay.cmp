@@ -1,0 +1,35 @@
+<!--Sample.cmp-->
+<aura:component implements="force:lightningQuickActionWithoutHeader"
+                access="global">  
+    
+    <div class="modal-header slds-modal__header slds-size_1-of-1">
+        <h4 class="title slds-text-heading--medium" >Upload File</h4>
+    </div>
+    
+    <!--Declare Attribute-->
+    <aura:attribute name="FirstName" type="String"/> 
+    <aura:attribute name="LastName" type="String"/>      
+    <lightning:overlayLibrary aura:id="overlayLib"/>     
+    <!--Component Start-->   
+    <div>
+        <lightning:input name="fname" label="First Name" value="{!v.FirstName}" />
+        <lightning:input name="lname" label="Last Name" value="{!v.LastName}" />
+        <lightning:button variant="brand" label="Show Modal" onclick="{!c.handleShowModalFooter}"/>
+    </div>
+    <!--Component End-->
+    
+    <aura:html tag="style">
+        .cuf-content {
+            padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+            padding: 0rem !important;
+        }       
+        .slds-modal__content{
+            overflow-y:hidden !important;
+            height:unset !important;
+            max-height:unset !important;
+        }
+    </aura:html>
+    
+</aura:component>

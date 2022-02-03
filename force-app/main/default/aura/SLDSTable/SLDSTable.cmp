@@ -1,0 +1,49 @@
+<aura:component controller="SampleCall" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <ltng:require styles="{!$Resource.SLDS230 +	
+                          '/assets/styles/salesforce-lightning-design-system.css'}"/>
+    <aura:attribute name="OrderList" type="object" />
+    <aura:attribute name="OrderListStatus" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<!--
+    {!v.OrderList.status}
+    {!v.OrderList.message}
+    -->
+    
+    <aura:if isTrue="{!v.OrderList.status}">
+        
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col"> <div class="slds-truncate" title="MyExtID">My External ID</div> </th>
+                    <th scope="col"> <div class="slds-truncate" title="MyID">My ID</div> </th>
+                    <th scope="col"> <div class="slds-truncate" title="MyName">My Name</div> </th>
+                    <th scope="col"> <div class="slds-truncate" title="MyOrderID">My Order ID</div> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.OrderList.MyorderList}" var="ol">              
+                    <tr>
+                        <th scope="row" data-label="MyExtID"> <div class="slds-truncate" title="{! ol.MyExtID }">{! ol.MyExtID }</div> </th>
+                        <td data-label="MyID"> <div class="slds-truncate" title="{! ol.MyID }">{! ol.MyID }</div> </td>
+                        <td data-label="MyName"> <div class="slds-truncate" title="{! ol.MyName }">{! ol.MyName }</div> </td>
+                        <td data-label="MyOrderID"> <div class="slds-truncate" title="{! ol.MyOrderID }">{! ol.MyOrderID }</div> </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+        
+        <aura:set attribute="else">
+            
+            <div class="demo-only" style="height:6rem;">
+                <div role="status" class="slds-spinner slds-spinner_medium">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+            
+        </aura:set>
+    </aura:if>    
+
+    
+</aura:component>

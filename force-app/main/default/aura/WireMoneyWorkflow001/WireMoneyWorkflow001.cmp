@@ -1,0 +1,18 @@
+<!--
+Description:    Quick Action on Customer details screen to launch Wire Money Servicing Visual Flow. 
+                Uses EAT_CustomerAuthentication component to check if sufficient Customer Auth is in place
+                Uses TransactionNavigation component to launch the Transaction UI
+Attributes:     recordId – The SF ID for Customer record
+                transactionId – Unique ID for the Wire Money Servicing Workflow
+Event Handlers: None
+-->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
+        <aura:attribute name="transactionId" type="String" default="VisualFlowExample00001" />
+
+		<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+        
+        <c:EAT_CustomerAuthentication aura:id="customerAuthenticator" />
+        
+        <c:TransactionNavigation aura:id="transactionNavigatinService" />
+
+    </aura:component>

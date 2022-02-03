@@ -1,0 +1,7 @@
+<aura:component >
+    <lightning:button variant="brand" label="Create Component" onclick="{! c.handleComponent }" />
+    <lightning:button variant="brand" label="Destroying Component" onclick="{! c.handleDestroy }" />
+    <lightning:button variant="brand" label="Destroying Component wit facet" onclick="{! c.handleDestroywithfacet }" />
+    
+    {!v.body}
+</aura:component>

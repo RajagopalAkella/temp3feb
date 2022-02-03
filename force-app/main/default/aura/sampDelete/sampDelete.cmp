@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="spString" type="String" default="Value1,Value2,Value3" />
+    <aura:handler name="init" action="{!c.init}" value="{!this}" />.
+    {!v.spString}
+    <br/>
+    <aura:unescapedHtml value="{!v.spString}" />
+</aura:component>
